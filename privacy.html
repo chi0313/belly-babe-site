@@ -45,62 +45,87 @@ li { margin:.3rem 0; }
 a { color:var(--rose-deep); }
 a:focus-visible { outline:2px solid var(--rose); outline-offset:2px; border-radius:3px; }
 footer { margin-top:3.5rem; padding-top:1.2rem; border-top:1px solid var(--line); font-size:.82rem; color:var(--soft); }
+
+.langbar { display:flex; justify-content:flex-end; margin-bottom:1.2rem; }
+#lang {
+  font-family:inherit; font-size:.82rem; color:var(--ink);
+  background:var(--card); border:1px solid var(--line); border-radius:999px;
+  padding:.3rem .9rem; cursor:pointer;
+}
+#lang:focus-visible { outline:2px solid var(--rose); outline-offset:2px; }
 </style>
 </head>
 <body>
 <div class="doc">
+  <div class="langbar"><select id="lang" aria-label="Language"><option value="en">English</option><option value="zh-Hant">繁體中文</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="de">Deutsch</option><option value="fr">Français</option><option value="es">Español</option></select></div>
   <span class="eyebrow">BELLY BABE</span>
-  <h1>Privacy Policy</h1>
-  <p class="sub">Belly Babe: Pregnancy Journal（肚肚寶貝：懷孕日記） · Effective September 10, 2026</p>
+  <h1 data-i18n="title">Privacy Policy</h1>
+  <p class="sub" data-i18n="sub">Belly Babe: Pregnancy Journal · Effective September 10, 2026</p>
 
   <div class="tldr">
-    <p>The short version: your journal belongs to you.</p>
-    <p>No accounts. No servers. No ads. No analytics. No tracking.</p>
-    <p>Everything stays on your iPhone and in your own private iCloud.</p>
+    <p data-i18n="tldr1">The short version: your journal belongs to you.</p>
+    <p data-i18n="tldr2">No accounts. No servers. No ads. No analytics. No tracking.</p>
+    <p data-i18n="tldr3">Everything stays on your iPhone and in your own private iCloud.</p>
   </div>
-
-  <h2>1. What Belly Babe stores</h2>
-  <p>Belly Babe keeps the things you put into it: diary entries, moods, photos, checkup notes and measurements, body notes, questions for your doctor, your baby's nickname and due date, and your app preferences.</p>
-  <p>All of it is stored <strong>locally on your device</strong>. We — the developer — have no way to read, receive, or access any of it.</p>
-
-  <h2>2. What we collect</h2>
-  <p><strong>Nothing.</strong> Belly Babe has no user accounts, no backend servers, no third-party analytics, no advertising SDKs, and no crash-reporting services that send us your data. We do not collect, sell, share, or process personal information.</p>
-
-  <h2>3. iCloud</h2>
-  <p>Your data may be included in your device's standard backup (iCloud or computer backup), controlled entirely by your own Apple Account settings. These backups are private to you; we cannot access them.</p>
-
-  <h2>4. Device permissions</h2>
-  <ul>
-    <li><strong>Photos</strong> — only when you choose photos to add to your journal. The app never scans your library in the background.</li>
-    <li><strong>Camera</strong> — only when you take bump photos with the in-app camera.</li>
-    <li><strong>Notifications</strong> — optional gentle reminders, off by default, entirely under your control in the app's Settings. Reminders quiet down automatically after your due date.</li>
-  </ul>
-  <p>Each permission is requested only when you use the related feature, and the app works without them.</p>
-
-  <h2>5. Purchases</h2>
-  <p>Belly Babe Club (subscription or lifetime purchase) is processed by Apple through the App Store. We never see your payment details. Purchases can be managed and restored through your Apple Account.</p>
-
-  <h2>6. Your control</h2>
-  <ul>
-    <li><strong>Export</strong> — in the app: Settings → Your data → Export everything (photos + JSON), anytime.</li>
-    <li><strong>Delete</strong> — Settings → Your data → Delete all data removes every entry, photo and setting from the device.</li>
-  </ul>
-
-  <h2>7. Children</h2>
-  <p>Belly Babe is intended for expectant parents and is not directed at children under 13.</p>
-
-  <h2>8. Not medical advice</h2>
-  <p>Content in the app is general information for companionship only — it is not medical advice, diagnosis, or treatment. Always consult your doctor or midwife about anything concerning you or your baby.</p>
-
-  <h2>9. Changes to this policy</h2>
-  <p>If this policy changes, the updated version will be posted at this page with a new effective date. Because the app collects nothing, changes are expected to be rare.</p>
-
-  <h2>10. Contact</h2>
-  <p>Questions about privacy? Email <a href="mailto:ai@ji0n.com">ai@ji0n.com</a>.</p>
+  
+  <h2 data-i18n="h1">1. What Belly Babe stores</h2>
+  <p data-i18n="p1">Belly Babe keeps what you put into it: diary entries, moods, photos, checkup notes and measurements, body notes, questions for your doctor, your baby's nickname and due date, and your preferences. All of it is stored locally on your device — we have no way to read or access any of it.</p>
+  <h2 data-i18n="h2">2. What we collect</h2>
+  <p data-i18n="p2">Nothing. No user accounts, no backend servers, no third-party analytics, no advertising SDKs. We do not collect, sell, share, or process personal information.</p>
+  <h2 data-i18n="h3">3. iCloud</h2>
+  <p data-i18n="p3">Your data may be included in your device's standard backup, controlled entirely by your own Apple Account. These backups are private to you; we cannot access them.</p>
+  <h2 data-i18n="h4">4. Device permissions</h2>
+  <p data-i18n="p4">Photos — only when you choose photos to add. Camera — only for in-app bump photos. Notifications — optional gentle reminders, off by default, quieting down automatically after your due date. Each permission is requested only when you use the feature.</p>
+  <h2 data-i18n="h5">5. Purchases</h2>
+  <p data-i18n="p5">Belly Babe Club is processed by Apple through the App Store. We never see your payment details.</p>
+  <h2 data-i18n="h6">6. Your control</h2>
+  <p data-i18n="p6">Export anytime (Settings → Your data). Delete everything anytime (Settings → Your data → Delete all data).</p>
+  <h2 data-i18n="h7">7. Children</h2>
+  <p data-i18n="p7">Belly Babe is intended for expectant parents and is not directed at children under 13.</p>
+  <h2 data-i18n="h8">8. Not medical advice</h2>
+  <p data-i18n="p8">Content in the app is gentle companionship only — always consult your doctor or midwife about anything concerning you or your baby.</p>
+  <h2 data-i18n="h9">9. Changes</h2>
+  <p data-i18n="p9">Updates will be posted here with a new effective date. Since the app collects nothing, changes should be rare.</p>
+  <h2 data-i18n="h10">10. Contact</h2>
+  <p><span data-i18n="p10">Questions about privacy? Email</span> <a href="mailto:ai@ji0n.com">ai@ji0n.com</a>.</p>
 
   <footer>
-    Belly Babe: Pregnancy Journal · <a href="index.html">Support</a>
+    Belly Babe: Pregnancy Journal · <a href="index.html" data-i18n="support_link">Support</a>
   </footer>
 </div>
+
+<script>
+(function() {
+  var LANGS = ["en", "zh-Hant", "ja", "ko", "de", "fr", "es"];
+  var STRINGS = {"title": {"en": "Privacy Policy", "zh-Hant": "隱私權政策", "ja": "プライバシーポリシー", "ko": "개인정보 처리방침", "de": "Datenschutzerklärung", "fr": "Politique de confidentialité", "es": "Política de privacidad"}, "sub": {"en": "Belly Babe: Pregnancy Journal · Effective September 10, 2026", "zh-Hant": "肚肚寶貝：懷孕日記 · 2026 年 9 月 10 日生效", "ja": "Belly Babe：妊娠日記 · 2026年9月10日発効", "ko": "Belly Babe: 임신 일기 · 2026년 9월 10일 시행", "de": "Belly Babe: Schwangerschaftstagebuch · Gültig ab 10. September 2026", "fr": "Belly Babe : Journal de grossesse · En vigueur le 10 septembre 2026", "es": "Belly Babe: Diario de embarazo · Vigente desde el 10 de septiembre de 2026"}, "tldr1": {"en": "The short version: your journal belongs to you.", "zh-Hant": "一句話版本：妳的日記只屬於妳。", "ja": "要するに：あなたの日記はあなたのもの。", "ko": "요약: 당신의 일기는 당신의 것이에요.", "de": "Kurzfassung: Dein Tagebuch gehört dir.", "fr": "En bref : ton journal t'appartient.", "es": "En resumen: tu diario te pertenece."}, "tldr2": {"en": "No accounts. No servers. No ads. No analytics. No tracking.", "zh-Hant": "沒有帳號、沒有伺服器、沒有廣告、沒有分析、沒有追蹤。", "ja": "アカウントなし。サーバーなし。広告なし。分析なし。トラッキングなし。", "ko": "계정 없음. 서버 없음. 광고 없음. 분석 없음. 추적 없음.", "de": "Keine Konten. Keine Server. Keine Werbung. Keine Analysen. Kein Tracking.", "fr": "Pas de compte. Pas de serveur. Pas de pub. Pas d'analytique. Pas de traçage.", "es": "Sin cuentas. Sin servidores. Sin anuncios. Sin analíticas. Sin rastreo."}, "tldr3": {"en": "Everything stays on your iPhone and in your own private iCloud.", "zh-Hant": "一切都留在妳的 iPhone 和妳自己的私人 iCloud 裡。", "ja": "すべてはあなたのiPhoneと、あなた自身のプライベートなiCloudの中に。", "ko": "모든 것은 내 iPhone과 나만의 개인 iCloud에만 있어요.", "de": "Alles bleibt auf deinem iPhone und in deiner eigenen privaten iCloud.", "fr": "Tout reste sur ton iPhone et dans ton iCloud privé.", "es": "Todo se queda en tu iPhone y en tu iCloud privado."}, "h1": {"en": "1. What Belly Babe stores", "zh-Hant": "1. Belly Babe 儲存什麼", "ja": "1. Belly Babeが保存するもの", "ko": "1. Belly Babe가 저장하는 것", "de": "1. Was Belly Babe speichert", "fr": "1. Ce que Belly Babe enregistre", "es": "1. Qué guarda Belly Babe"}, "p1": {"en": "Belly Babe keeps what you put into it: diary entries, moods, photos, checkup notes and measurements, body notes, questions for your doctor, your baby's nickname and due date, and your preferences. All of it is stored locally on your device — we have no way to read or access any of it.", "zh-Hant": "Belly Babe 只保存妳放進去的內容：日記、心情、照片、產檢筆記與量測、身體記錄、想問醫生的問題、寶寶暱稱與預產期，以及妳的偏好設定。這些全部儲存在妳的裝置本機——我們沒有任何方式讀取或接觸。", "ja": "Belly Babeが保存するのは、あなたが入れた内容だけ：日記、気分、写真、健診メモと測定値、体調メモ、先生への質問、赤ちゃんのニックネームと予定日、各種設定。すべて端末内にローカル保存され、私たちが読む手段はありません。", "ko": "Belly Babe는 당신이 넣은 것만 보관해요: 일기, 기분, 사진, 검진 메모와 측정값, 몸 상태, 의사에게 물어볼 질문, 아기 애칭과 예정일, 그리고 설정. 전부 기기에 로컬로 저장되며 우리는 접근할 방법이 없어요.", "de": "Belly Babe speichert, was du hineingibst: Tagebucheinträge, Stimmungen, Fotos, Vorsorge-Notizen und Messwerte, Körper-Notizen, Fragen an die Ärztin, Spitzname und Termin deines Babys sowie deine Einstellungen. Alles liegt lokal auf deinem Gerät — wir können nichts davon lesen.", "fr": "Belly Babe garde ce que tu y mets : entrées de journal, humeurs, photos, notes et mesures de visites, notes du corps, questions au médecin, surnom et terme de bébé, et tes préférences. Tout est stocké localement sur ton appareil — nous n'avons aucun moyen d'y accéder.", "es": "Belly Babe guarda lo que tú pones: entradas, ánimos, fotos, notas y medidas de controles, notas del cuerpo, preguntas al médico, apodo y fecha del bebé, y tus preferencias. Todo se almacena localmente en tu dispositivo: no tenemos forma de leerlo."}, "h2": {"en": "2. What we collect", "zh-Hant": "2. 我們收集什麼", "ja": "2. 私たちが収集するもの", "ko": "2. 우리가 수집하는 것", "de": "2. Was wir erheben", "fr": "2. Ce que nous collectons", "es": "2. Qué recopilamos"}, "p2": {"en": "Nothing. No user accounts, no backend servers, no third-party analytics, no advertising SDKs. We do not collect, sell, share, or process personal information.", "zh-Hant": "什麼都不收集。沒有使用者帳號、沒有後端伺服器、沒有第三方分析、沒有廣告 SDK。我們不收集、不販售、不分享、不處理任何個人資料。", "ja": "何も収集しません。ユーザーアカウントもバックエンドサーバーも第三者分析も広告SDKもありません。個人情報の収集・販売・共有・処理は行いません。", "ko": "아무것도요. 사용자 계정, 백엔드 서버, 서드파티 분석, 광고 SDK가 없어요. 개인정보를 수집·판매·공유·처리하지 않아요.", "de": "Nichts. Keine Nutzerkonten, keine Backend-Server, keine Dritt-Analysen, keine Werbe-SDKs. Wir erheben, verkaufen, teilen oder verarbeiten keine persönlichen Daten.", "fr": "Rien. Pas de comptes, pas de serveurs, pas d'analytique tierce, pas de SDK publicitaires. Nous ne collectons, vendons, partageons ni traitons aucune donnée personnelle.", "es": "Nada. Sin cuentas, sin servidores, sin analíticas de terceros, sin SDK publicitarios. No recopilamos, vendemos, compartimos ni procesamos información personal."}, "h3": {"en": "3. iCloud", "zh-Hant": "3. iCloud", "ja": "3. iCloud", "ko": "3. iCloud", "de": "3. iCloud", "fr": "3. iCloud", "es": "3. iCloud"}, "p3": {"en": "Your data may be included in your device's standard backup, controlled entirely by your own Apple Account. These backups are private to you; we cannot access them.", "zh-Hant": "資料可能包含在裝置的標準備份中，完全由妳自己的 Apple 帳號控制。備份只屬於妳，我們無法存取。", "ja": "データは端末の標準バックアップに含まれることがあり、すべてあなたのApple Accountで管理されます。バックアップはあなただけのもので、私たちはアクセスできません。", "ko": "데이터는 기기의 표준 백업에 포함될 수 있고, 전적으로 당신의 Apple 계정이 관리해요. 백업은 당신만의 것이며 우리는 접근할 수 없어요.", "de": "Deine Daten können im Standard-Backup deines Geräts enthalten sein, vollständig von deinem Apple Account kontrolliert. Diese Backups sind privat; wir haben keinen Zugriff.", "fr": "Tes données peuvent figurer dans la sauvegarde standard de l'appareil, entièrement contrôlée par ton compte Apple. Ces sauvegardes te sont privées ; nous n'y avons pas accès.", "es": "Tus datos pueden ir en la copia estándar del dispositivo, controlada por tu cuenta de Apple. Esas copias son privadas; no podemos acceder."}, "h4": {"en": "4. Device permissions", "zh-Hant": "4. 裝置權限", "ja": "4. 端末の権限", "ko": "4. 기기 권한", "de": "4. Geräteberechtigungen", "fr": "4. Autorisations", "es": "4. Permisos del dispositivo"}, "p4": {"en": "Photos — only when you choose photos to add. Camera — only for in-app bump photos. Notifications — optional gentle reminders, off by default, quieting down automatically after your due date. Each permission is requested only when you use the feature.", "zh-Hant": "照片——只在妳選照片加入時使用。相機——只在 app 內拍孕肚照時使用。通知——可選的溫柔提醒，預設關閉，預產期過後自動安靜。每個權限都只在使用該功能時才請求。", "ja": "写真：追加する写真を選ぶ時だけ。カメラ：アプリ内でおなか写真を撮る時だけ。通知：任意のやさしいリマインダーで、初期設定はオフ、予定日後は自動的に静かになります。各権限は該当機能の使用時にのみ求められます。", "ko": "사진 — 추가할 사진을 고를 때만. 카메라 — 앱에서 배 사진을 찍을 때만. 알림 — 선택형 부드러운 리마인더로 기본 꺼짐, 예정일 이후 자동으로 조용해져요. 각 권한은 해당 기능을 쓸 때만 요청돼요.", "de": "Fotos — nur wenn du Fotos auswählst. Kamera — nur für Babybauch-Fotos in der App. Mitteilungen — optionale sanfte Erinnerungen, standardmäßig aus, nach dem Termin automatisch still. Jede Berechtigung wird erst bei Nutzung angefragt.", "fr": "Photos — seulement quand tu en choisis. Appareil photo — seulement pour les photos du ventre dans l'app. Notifications — rappels doux optionnels, désactivés par défaut, silencieux après le terme. Chaque autorisation n'est demandée qu'à l'usage.", "es": "Fotos: solo al elegir fotos. Cámara: solo para fotos de barriga en la app. Notificaciones: recordatorios suaves opcionales, apagados por defecto y silenciados tras la fecha prevista. Cada permiso se pide solo al usar la función."}, "h5": {"en": "5. Purchases", "zh-Hant": "5. 購買", "ja": "5. 購入", "ko": "5. 구매", "de": "5. Käufe", "fr": "5. Achats", "es": "5. Compras"}, "p5": {"en": "Belly Babe Club is processed by Apple through the App Store. We never see your payment details.", "zh-Hant": "Belly Babe Club 由 Apple 透過 App Store 處理，我們完全看不到妳的付款資訊。", "ja": "Belly Babe ClubはApp Storeを通じてAppleが処理します。支払い情報を私たちが見ることはありません。", "ko": "Belly Babe Club은 App Store를 통해 Apple이 처리해요. 결제 정보를 우리는 볼 수 없어요.", "de": "Der Belly Babe Club wird von Apple über den App Store abgewickelt. Deine Zahlungsdaten sehen wir nie.", "fr": "Le Belly Babe Club est traité par Apple via l'App Store. Nous ne voyons jamais tes informations de paiement.", "es": "Belly Babe Club lo procesa Apple mediante el App Store. Nunca vemos tus datos de pago."}, "h6": {"en": "6. Your control", "zh-Hant": "6. 妳的掌控", "ja": "6. あなたのコントロール", "ko": "6. 당신의 통제권", "de": "6. Deine Kontrolle", "fr": "6. Ton contrôle", "es": "6. Tu control"}, "p6": {"en": "Export anytime (Settings → Your data). Delete everything anytime (Settings → Your data → Delete all data).", "zh-Hant": "隨時匯出（設定 → 妳的資料）。隨時刪除全部（設定 → 妳的資料 → 刪除全部資料）。", "ja": "いつでも書き出し（設定 → あなたのデータ）。いつでも全削除（設定 → あなたのデータ → すべてのデータを削除）。", "ko": "언제든 내보내기(설정 → 내 데이터). 언제든 전체 삭제(설정 → 내 데이터 → 모든 데이터 삭제).", "de": "Jederzeit exportieren (Einstellungen → Deine Daten). Jederzeit alles löschen (Einstellungen → Deine Daten → Alle Daten löschen).", "fr": "Exporte à tout moment (Réglages → Tes données). Supprime tout à tout moment (Réglages → Tes données → Supprimer toutes les données).", "es": "Exporta cuando quieras (Ajustes → Tus datos). Borra todo cuando quieras (Ajustes → Tus datos → Borrar todos los datos)."}, "h7": {"en": "7. Children", "zh-Hant": "7. 兒童", "ja": "7. お子さまについて", "ko": "7. 아동", "de": "7. Kinder", "fr": "7. Enfants", "es": "7. Menores"}, "p7": {"en": "Belly Babe is intended for expectant parents and is not directed at children under 13.", "zh-Hant": "Belly Babe 為準父母設計，不以 13 歲以下兒童為對象。", "ja": "Belly Babeは妊娠中の方向けであり、13歳未満の子どもを対象としていません。", "ko": "Belly Babe는 예비 부모를 위한 앱으로 13세 미만 아동을 대상으로 하지 않아요.", "de": "Belly Babe richtet sich an werdende Eltern und nicht an Kinder unter 13 Jahren.", "fr": "Belly Babe s'adresse aux futurs parents et non aux enfants de moins de 13 ans.", "es": "Belly Babe está pensada para futuros padres y no se dirige a menores de 13 años."}, "h8": {"en": "8. Not medical advice", "zh-Hant": "8. 非醫療建議", "ja": "8. 医療アドバイスではありません", "ko": "8. 의학적 조언이 아님", "de": "8. Kein medizinischer Rat", "fr": "8. Pas un avis médical", "es": "8. No es consejo médico"}, "p8": {"en": "Content in the app is gentle companionship only — always consult your doctor or midwife about anything concerning you or your baby.", "zh-Hant": "app 內容僅為溫柔的陪伴——關於妳和寶寶的任何狀況，請一律諮詢醫師或助產師。", "ja": "アプリの内容はやさしい寄り添いに過ぎません。あなたと赤ちゃんに関することは必ず医師・助産師にご相談ください。", "ko": "앱 콘텐츠는 다정한 동행일 뿐이에요 — 나와 아기에 관한 것은 반드시 의사나 조산사와 상의하세요.", "de": "Die Inhalte der App sind nur sanfte Begleitung — sprich bei allem, was dich oder dein Baby betrifft, mit Ärztin oder Hebamme.", "fr": "Le contenu de l'app n'est qu'une douce compagnie — consulte toujours ton médecin ou ta sage-femme.", "es": "El contenido de la app es solo compañía amable: consulta siempre a tu médico o matrona."}, "h9": {"en": "9. Changes", "zh-Hant": "9. 政策變更", "ja": "9. 変更について", "ko": "9. 변경", "de": "9. Änderungen", "fr": "9. Modifications", "es": "9. Cambios"}, "p9": {"en": "Updates will be posted here with a new effective date. Since the app collects nothing, changes should be rare.", "zh-Hant": "若有更新會公布在本頁並附新的生效日期。因為 app 什麼都不收集，變更應該很少。", "ja": "更新はこのページに新しい発効日とともに掲載します。何も収集しないため、変更はまれなはずです。", "ko": "업데이트는 새 시행일과 함께 이 페이지에 게시돼요. 아무것도 수집하지 않으니 변경은 드물 거예요.", "de": "Aktualisierungen werden hier mit neuem Datum veröffentlicht. Da die App nichts erhebt, sollten Änderungen selten sein.", "fr": "Les mises à jour seront publiées ici avec une nouvelle date. L'app ne collectant rien, elles devraient être rares.", "es": "Las actualizaciones se publicarán aquí con nueva fecha. Como la app no recopila nada, deberían ser raras."}, "h10": {"en": "10. Contact", "zh-Hant": "10. 聯絡方式", "ja": "10. お問い合わせ", "ko": "10. 문의", "de": "10. Kontakt", "fr": "10. Contact", "es": "10. Contacto"}, "p10": {"en": "Questions about privacy? Email", "zh-Hant": "隱私相關問題請來信", "ja": "プライバシーに関するご質問は", "ko": "개인정보 관련 문의는", "de": "Fragen zum Datenschutz? Schreib an", "fr": "Des questions sur la vie privée ? Écris à", "es": "¿Dudas sobre privacidad? Escribe a"}, "support_link": {"en": "Support", "zh-Hant": "支援中心", "ja": "サポート", "ko": "지원", "de": "Support", "fr": "Assistance", "es": "Soporte"}};
+  function pick() {
+    var saved = null;
+    try { saved = localStorage.getItem("bbLang"); } catch (e) {}
+    if (saved && LANGS.indexOf(saved) >= 0) return saved;
+    var q = new URLSearchParams(location.search).get("lang");
+    if (q && LANGS.indexOf(q) >= 0) return q;
+    var nav = (navigator.language || "en");
+    if (/^zh/.test(nav)) return "zh-Hant";
+    var two = nav.slice(0, 2);
+    for (var i = 0; i < LANGS.length; i++) if (LANGS[i].slice(0,2) === two) return LANGS[i];
+    return "en";
+  }
+  function apply(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-i18n]").forEach(function(el) {
+      var k = el.getAttribute("data-i18n");
+      if (STRINGS[k] && STRINGS[k][lang]) el.textContent = STRINGS[k][lang];
+    });
+    document.getElementById("lang").value = lang;
+  }
+  var lang = pick();
+  apply(lang);
+  document.getElementById("lang").addEventListener("change", function() {
+    try { localStorage.setItem("bbLang", this.value); } catch (e) {}
+    apply(this.value);
+  });
+})();
+</script>
+
 </body>
 </html>

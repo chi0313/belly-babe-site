@@ -50,51 +50,90 @@ a:focus-visible { outline:2px solid var(--rose); outline-offset:2px; border-radi
 }
 .contact p { margin:.2rem 0; }
 footer { margin-top:3.5rem; padding-top:1.2rem; border-top:1px solid var(--line); font-size:.82rem; color:var(--soft); }
+
+.langbar { display:flex; justify-content:flex-end; margin-bottom:1.2rem; }
+#lang {
+  font-family:inherit; font-size:.82rem; color:var(--ink);
+  background:var(--card); border:1px solid var(--line); border-radius:999px;
+  padding:.3rem .9rem; cursor:pointer;
+}
+#lang:focus-visible { outline:2px solid var(--rose); outline-offset:2px; }
 </style>
 </head>
 <body>
 <div class="doc">
+  <div class="langbar"><select id="lang" aria-label="Language"><option value="en">English</option><option value="zh-Hant">繁體中文</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="de">Deutsch</option><option value="fr">Français</option><option value="es">Español</option></select></div>
   <span class="eyebrow">BELLY BABE</span>
-  <h1>Support</h1>
-  <p class="sub">Belly Babe: Pregnancy Journal — a gentle diary for your pregnancy.<br>肚肚寶貝：懷孕日記</p>
+  <h1 data-i18n="title">Support</h1>
+  <p class="sub" data-i18n="sub">Belly Babe: Pregnancy Journal — a gentle diary for your pregnancy.</p>
 
-  <h2>Frequently asked</h2>
-
+  <h2 data-i18n="faq">Frequently asked</h2>
+  
   <div class="card">
-    <h3>Where is my data stored?</h3>
-    <p>Everything lives <b>on your iPhone</b> and, if you use iCloud, in <b>your own private iCloud backup</b>. There are no accounts and no servers — we never see your entries or photos. See the <a href="privacy.html">Privacy Policy</a>.</p>
+    <h3 data-i18n="q1">Where is my data stored?</h3>
+    <p data-i18n="a1">Everything lives on your iPhone and, if you use iCloud, in your own private iCloud backup. No accounts, no servers — we never see your entries or photos.</p>
   </div>
-
   <div class="card">
-    <h3>How do I back up or move to a new phone?</h3>
-    <p>Your data is included in your normal iPhone backup (iCloud or computer). Restoring the backup on a new phone brings your journal with it. You can also export everything anytime in <b>Settings → Your data → Export everything</b>.</p>
+    <h3 data-i18n="q2">How do I back up or move to a new phone?</h3>
+    <p data-i18n="a2">Your data is included in your normal iPhone backup. Restoring it on a new phone brings your journal with it. You can also export anytime in Settings → Your data.</p>
   </div>
-
   <div class="card">
-    <h3>How do I restore my Belly Babe Club purchase?</h3>
-    <p>Open <b>Settings</b> in the app and tap <b>Restore purchase</b>. Make sure you're signed in with the same Apple Account you purchased with.</p>
+    <h3 data-i18n="q3">How do I restore my Belly Babe Club purchase?</h3>
+    <p data-i18n="a3">Open Settings in the app and tap Restore purchase, signed in with the same Apple Account you purchased with.</p>
   </div>
-
   <div class="card">
-    <h3>How do I delete all my data?</h3>
-    <p>In the app: <b>Settings → Your data → Delete all data</b>. This removes every entry, photo and setting from your device. If you'd like a copy first, export before deleting.</p>
+    <h3 data-i18n="q4">How do I delete all my data?</h3>
+    <p data-i18n="a4">In the app: Settings → Your data → Delete all data. If you'd like a copy first, export before deleting.</p>
   </div>
-
   <div class="card">
-    <h3>Is the weekly content medical advice?</h3>
-    <p>No. Everything in the app is general information to keep you company — for anything about you or your baby, please talk with your doctor or midwife.</p>
+    <h3 data-i18n="q5">Is the weekly content medical advice?</h3>
+    <p data-i18n="a5">No. Everything in the app is gentle company — for anything about you or your baby, please talk with your doctor or midwife.</p>
   </div>
 
   <div class="contact">
-    <h2 style="margin-top:0">Contact us</h2>
-    <p>Questions, ideas, or something not working?</p>
+    <h2 style="margin-top:0" data-i18n="contact">Contact us</h2>
+    <p data-i18n="contact_sub">Questions, ideas, or something not working?</p>
     <p>Email: <a href="mailto:ai@ji0n.com">ai@ji0n.com</a></p>
-    <p style="font-size:.85rem; color:var(--soft)">We usually reply within a few days.</p>
+    <p style="font-size:.85rem; color:var(--soft)" data-i18n="contact_reply">We usually reply within a few days.</p>
   </div>
 
   <footer>
-    Belly Babe: Pregnancy Journal · <a href="privacy.html">Privacy Policy</a>
+    Belly Babe: Pregnancy Journal · <a href="privacy.html" data-i18n="privacy_link">Privacy Policy</a>
   </footer>
 </div>
+
+<script>
+(function() {
+  var LANGS = ["en", "zh-Hant", "ja", "ko", "de", "fr", "es"];
+  var STRINGS = {"title": {"en": "Support", "zh-Hant": "支援中心", "ja": "サポート", "ko": "지원", "de": "Support", "fr": "Assistance", "es": "Soporte"}, "sub": {"en": "Belly Babe: Pregnancy Journal — a gentle diary for your pregnancy.", "zh-Hant": "肚肚寶貝：懷孕日記——溫柔的孕期日記。", "ja": "Belly Babe：妊娠日記——やさしい妊娠ダイアリー。", "ko": "Belly Babe: 임신 일기 — 다정한 임신 다이어리.", "de": "Belly Babe: Schwangerschaftstagebuch — ein sanftes Tagebuch für deine Schwangerschaft.", "fr": "Belly Babe : Journal de grossesse — un doux journal pour ta grossesse.", "es": "Belly Babe: Diario de embarazo — un diario amable para tu embarazo."}, "faq": {"en": "Frequently asked", "zh-Hant": "常見問題", "ja": "よくある質問", "ko": "자주 묻는 질문", "de": "Häufige Fragen", "fr": "Questions fréquentes", "es": "Preguntas frecuentes"}, "q1": {"en": "Where is my data stored?", "zh-Hant": "我的資料存在哪裡？", "ja": "データはどこに保存されますか？", "ko": "내 데이터는 어디에 저장되나요?", "de": "Wo werden meine Daten gespeichert?", "fr": "Où sont stockées mes données ?", "es": "¿Dónde se guardan mis datos?"}, "a1": {"en": "Everything lives on your iPhone and, if you use iCloud, in your own private iCloud backup. No accounts, no servers — we never see your entries or photos.", "zh-Hant": "所有資料只存在妳的 iPhone 上；若使用 iCloud，也只會進入妳自己的私人 iCloud 備份。沒有帳號、沒有伺服器——我們看不到妳的任何記錄與照片。", "ja": "すべてのデータは、あなたのiPhoneと（iCloud利用時は）あなた自身のプライベートなiCloudバックアップにのみ保存されます。アカウントもサーバーもなく、私たちが記録や写真を見ることはありません。", "ko": "모든 데이터는 내 iPhone에, iCloud 사용 시 나만의 개인 iCloud 백업에만 저장돼요. 계정도 서버도 없어 우리는 기록과 사진을 볼 수 없어요.", "de": "Alles bleibt auf deinem iPhone und, falls du iCloud nutzt, in deinem eigenen privaten iCloud-Backup. Keine Konten, keine Server — wir sehen deine Einträge und Fotos nie.", "fr": "Tout reste sur ton iPhone et, si tu utilises iCloud, dans ta propre sauvegarde privée. Pas de compte, pas de serveur — nous ne voyons jamais tes entrées ni tes photos.", "es": "Todo se queda en tu iPhone y, si usas iCloud, en tu propia copia privada. Sin cuentas ni servidores: nunca vemos tus entradas ni fotos."}, "q2": {"en": "How do I back up or move to a new phone?", "zh-Hant": "怎麼備份或換新手機？", "ja": "バックアップや機種変更はどうすれば？", "ko": "백업이나 기기 변경은 어떻게 하나요?", "de": "Wie sichere ich oder wechsle das Handy?", "fr": "Comment sauvegarder ou changer de téléphone ?", "es": "¿Cómo hago copia o cambio de teléfono?"}, "a2": {"en": "Your data is included in your normal iPhone backup. Restoring it on a new phone brings your journal with it. You can also export anytime in Settings → Your data.", "zh-Hant": "資料包含在 iPhone 的一般備份裡，新手機還原備份日記就跟著回來。也可以隨時在「設定 → 妳的資料」匯出。", "ja": "データは通常のiPhoneバックアップに含まれます。新しい端末で復元すれば日記も一緒に戻ります。アプリの「設定 → あなたのデータ」からいつでも書き出せます。", "ko": "데이터는 일반 iPhone 백업에 포함돼요. 새 기기에서 복원하면 일기도 함께 돌아와요. 앱의 설정 → 내 데이터에서 언제든 내보낼 수도 있어요.", "de": "Deine Daten sind im normalen iPhone-Backup enthalten. Beim Wiederherstellen auf einem neuen Handy kommt dein Tagebuch mit. Exportieren geht jederzeit unter Einstellungen → Deine Daten.", "fr": "Tes données font partie de la sauvegarde iPhone normale. En la restaurant sur un nouveau téléphone, ton journal suit. Tu peux aussi exporter à tout moment dans Réglages → Tes données.", "es": "Tus datos van en la copia normal del iPhone. Al restaurarla en un teléfono nuevo, tu diario viene con ella. También puedes exportar cuando quieras en Ajustes → Tus datos."}, "q3": {"en": "How do I restore my Belly Babe Club purchase?", "zh-Hant": "怎麼恢復 Belly Babe Club 的購買？", "ja": "Belly Babe Clubの購入を復元するには？", "ko": "Belly Babe Club 구매는 어떻게 복원하나요?", "de": "Wie stelle ich meinen Club-Kauf wieder her?", "fr": "Comment restaurer mon achat Belly Babe Club ?", "es": "¿Cómo restauro mi compra del Club?"}, "a3": {"en": "Open Settings in the app and tap Restore purchase, signed in with the same Apple Account you purchased with.", "zh-Hant": "打開 app 的設定頁點「恢復購買」，並確認登入的是當初購買的同一個 Apple 帳號。", "ja": "アプリの設定で「購入を復元」をタップ。購入時と同じApple Accountでサインインしていることを確認してください。", "ko": "앱 설정에서 '구매 복원'을 누르세요. 구매했던 것과 같은 Apple 계정으로 로그인되어 있어야 해요.", "de": "Öffne die Einstellungen in der App und tippe auf „Kauf wiederherstellen“ — mit demselben Apple Account wie beim Kauf.", "fr": "Ouvre les Réglages de l'app et touche « Restaurer l'achat », avec le même compte Apple que lors de l'achat.", "es": "Abre Ajustes en la app y toca Restaurar compra, con la misma cuenta de Apple con la que compraste."}, "q4": {"en": "How do I delete all my data?", "zh-Hant": "怎麼刪除全部資料？", "ja": "すべてのデータを削除するには？", "ko": "모든 데이터는 어떻게 삭제하나요?", "de": "Wie lösche ich alle Daten?", "fr": "Comment supprimer toutes mes données ?", "es": "¿Cómo borro todos mis datos?"}, "a4": {"en": "In the app: Settings → Your data → Delete all data. If you'd like a copy first, export before deleting.", "zh-Hant": "在 app 裡：設定 → 妳的資料 → 刪除全部資料。想留一份的話，刪除前先匯出。", "ja": "アプリ内：設定 → あなたのデータ → すべてのデータを削除。残したい場合は先に書き出しを。", "ko": "앱에서: 설정 → 내 데이터 → 모든 데이터 삭제. 사본이 필요하면 삭제 전에 내보내세요.", "de": "In der App: Einstellungen → Deine Daten → Alle Daten löschen. Für eine Kopie vorher exportieren.", "fr": "Dans l'app : Réglages → Tes données → Supprimer toutes les données. Pour garder une copie, exporte d'abord.", "es": "En la app: Ajustes → Tus datos → Borrar todos los datos. Si quieres una copia, exporta antes."}, "q5": {"en": "Is the weekly content medical advice?", "zh-Hant": "每週內容是醫療建議嗎？", "ja": "毎週のコンテンツは医療アドバイスですか？", "ko": "주간 콘텐츠는 의학적 조언인가요?", "de": "Sind die Wocheninhalte medizinischer Rat?", "fr": "Le contenu hebdomadaire est-il un avis médical ?", "es": "¿El contenido semanal es consejo médico?"}, "a5": {"en": "No. Everything in the app is gentle company — for anything about you or your baby, please talk with your doctor or midwife.", "zh-Hant": "不是。app 裡的一切都是溫柔的陪伴——關於妳和寶寶的任何狀況，請諮詢醫師或助產師。", "ja": "いいえ。アプリの内容はやさしい寄り添いです。あなたと赤ちゃんのことは医師・助産師にご相談ください。", "ko": "아니요. 앱의 모든 것은 다정한 동행이에요 — 나와 아기에 관한 것은 의사나 조산사와 상의하세요.", "de": "Nein. Alles in der App ist sanfte Begleitung — bei allem rund um dich und dein Baby sprich mit Ärztin oder Hebamme.", "fr": "Non. Tout dans l'app est une douce compagnie — pour toi ou ton bébé, parles-en à ton médecin ou ta sage-femme.", "es": "No. Todo en la app es compañía amable: para cualquier cosa sobre ti o tu bebé, habla con tu médico o matrona."}, "contact": {"en": "Contact us", "zh-Hant": "聯絡我們", "ja": "お問い合わせ", "ko": "문의하기", "de": "Kontakt", "fr": "Nous contacter", "es": "Contacto"}, "contact_sub": {"en": "Questions, ideas, or something not working?", "zh-Hant": "有問題、想法，或哪裡怪怪的嗎？", "ja": "質問・アイデア・不具合はこちらへ。", "ko": "질문, 아이디어, 혹은 문제가 있나요?", "de": "Fragen, Ideen oder etwas funktioniert nicht?", "fr": "Des questions, des idées, un souci ?", "es": "¿Preguntas, ideas o algo que no funciona?"}, "contact_reply": {"en": "We usually reply within a few days.", "zh-Hant": "通常幾天內回覆。", "ja": "通常数日以内に返信します。", "ko": "보통 며칠 안에 답장드려요.", "de": "Wir antworten meist innerhalb weniger Tage.", "fr": "Nous répondons en général sous quelques jours.", "es": "Solemos responder en pocos días."}, "privacy_link": {"en": "Privacy Policy", "zh-Hant": "隱私權政策", "ja": "プライバシーポリシー", "ko": "개인정보 처리방침", "de": "Datenschutzerklärung", "fr": "Politique de confidentialité", "es": "Política de privacidad"}};
+  function pick() {
+    var saved = null;
+    try { saved = localStorage.getItem("bbLang"); } catch (e) {}
+    if (saved && LANGS.indexOf(saved) >= 0) return saved;
+    var q = new URLSearchParams(location.search).get("lang");
+    if (q && LANGS.indexOf(q) >= 0) return q;
+    var nav = (navigator.language || "en");
+    if (/^zh/.test(nav)) return "zh-Hant";
+    var two = nav.slice(0, 2);
+    for (var i = 0; i < LANGS.length; i++) if (LANGS[i].slice(0,2) === two) return LANGS[i];
+    return "en";
+  }
+  function apply(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-i18n]").forEach(function(el) {
+      var k = el.getAttribute("data-i18n");
+      if (STRINGS[k] && STRINGS[k][lang]) el.textContent = STRINGS[k][lang];
+    });
+    document.getElementById("lang").value = lang;
+  }
+  var lang = pick();
+  apply(lang);
+  document.getElementById("lang").addEventListener("change", function() {
+    try { localStorage.setItem("bbLang", this.value); } catch (e) {}
+    apply(this.value);
+  });
+})();
+</script>
+
 </body>
 </html>
